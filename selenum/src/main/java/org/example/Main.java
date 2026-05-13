@@ -8,25 +8,22 @@ import org.openqa.selenium.chrome.ChromeDriver;//TIP To <b>Run</b> code, press <
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
-
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
-
+    public static void main(String[] args)throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.get("http://google.com");
         driver.manage().window().maximize();
 //        Thread.sleep(400);
         driver.navigate().to("https://automation.co.il/tutorials/selenium/demo1/indexID.html");
-        Thread.sleep(500);
+
         WebElement fname=driver.findElement(By.id("firstname"));
-        fname.sendKeys("Tovi");
+        fname.sendKeys("Zheavi");
         Thread.sleep(1000);
         WebElement lname=driver.findElement(By.id("lastname"));
-        lname.sendKeys("Cohen");
+        lname.sendKeys("Sabo");
         Thread.sleep(1000);
         WebElement Email=driver.findElement(By.id("email"));
-        Email.sendKeys("tovi1892");
+        Email.sendKeys("ghuytfy");
         Thread.sleep(1000);
         WebElement btnNext=driver.findElement(By.id("next"));
         btnNext.click();
@@ -36,7 +33,7 @@ public class Main {
         Thread.sleep(1000);
         Email.clear();
         Thread.sleep(1000);
-        Email.sendKeys("tovi1892@email.com");
+        Email.sendKeys("ghuytfy@email.com");
         Thread.sleep(1000);
         btnNext.click();
         Thread.sleep(1000);
@@ -46,9 +43,11 @@ public class Main {
         WebElement btnNext2=driver.findElement(By.id("next"));
         btnNext2.click();
         Thread.sleep(1000);
-        driver.findElement(By.id("streetname")).sendKeys("רחוב שדה חמד");
+        WebElement streetname= driver.findElement(By.id("streetname"));
+        streetname.clear();
+        streetname.sendKeys("רחוב נתיש ");
         Thread.sleep(1000);
-        driver.findElement(By.id("streetnumber")).sendKeys("38");
+        driver.findElement(By.id("streetnumber")).sendKeys("10");
         Thread.sleep(1000);
         driver.findElement(By.id("city")).sendKeys("מודיעין עילית");
         Thread.sleep(1000);
@@ -71,29 +70,5 @@ public class Main {
         Thread.sleep(2000);
 
         driver.quit();
-
-
-
-//        System.out.println(driver.getTitle());
-//        driver.navigate().back();
-//        System.out.println(driver.getTitle());
-//        Thread.sleep(2000);
-//
-//        driver.switchTo().newWindow(WindowType.TAB);
-//
-//
-//        driver.get("https://www.google.com/maps/@31.9304747,35.04224,15.75z?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D");
-//        Thread.sleep(1000);
-//
-//        driver.navigate().to("https://automation.co.il/tutorials/selenium/demo1/indexID.html");
-//        Thread.sleep(2000);
-//        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-//        driver.switchTo().window(tabs.get(0));
-
-
-
-
-
-
     }
 }
